@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slide in Animation</title>
+  <style>
+    @keyframes topDown {
+      100% { top: 86px; }
+    }
+    @keyframes slideLeft {
+      100% { left: 235px; }
+    }
+    @keyframes show {
+      100% { opacity: 1; }
+    }
+    body {
+      font-family: "helvetica", arial, sans-serif;
+      color: #333;
+      position: relative;
+    }
+    header, section {
+      width: 75%;
+      margin: 40px auto;
+    }
+    section {
+      background-color: #e4dcd1;
+      border: 2px solid #d2cabf;
+      padding: 10px 20px;
+      text-align: justify;
+      box-sizing: border-box;
+    }
+    .topDown {
+      left: 235px;
+      position: absolute;
+      opacity: 0;
+      animation: topDown 1.5s forwards, show 2.5s forwards;
+      top: -200px;
+    }
+    .leftRight {
+      position: absolute;
+      left: -1178px;
+      width: 75%;
+      opacity: 0;
+      top: 330px;
+    }
+    .leftRight.slide {
+      animation: slideLeft 0.5s forwards, show 1s forwards;
+    }
+    h1 {
+      text-align: center;
+    }
+    .triggerSection {
+      padding: 5px 10px;
+      border: 2px solid #20e8a8;
+      background-color: #04ca9c;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    .triggerSection:hover {
+      background-color: #20e8a8;
+    }
+    .triggerSection:active {
+      background-color: #02a780;
+    }
+    .triggerSection:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Slide in Animation</h1>
+  </header>
+  <section class="topDown">
+    <h2>Top-Down</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <button class="triggerSection" id="leftRight">Show Left-Right</button>
+  </section>
+  <section class="leftRight">
+    <h2>Left-Right</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </section>
+  <script>
+    var button = document.querySelector('.triggerSection');
+    button.addEventListener('click', showElement.bind(button));
+
+    function showElement() {
+      var el = document.querySelector('.'+this.id);
+      el.classList.add('slide');
+    }
+  </script>
+</body>
+</html>

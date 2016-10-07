@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Shadow Effects</title>
+  <style>
+    body {
+      font-family: helvetica, arial, sans-serif;
+      color: #999;
+    }
+    header, section {
+      width: 75%;
+      margin: 40px auto;
+    }
+    h1 {
+      text-shadow: -1px 1px 1px #000;
+      transition: text-shadow 0.5s ease-in-out;
+    }
+    h1:hover {
+      text-shadow: -4px 4px 2px #000;
+    }
+    p {
+      color: transparent;
+      text-shadow: 0 0 5px #000;
+      transition: color 0.5s ease-out, text-shadow 0.5s ease-out;
+    }
+    p:hover {
+      color: #999;
+      text-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Text Shadow Effects</h1>
+  </header>
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </section>
+</body>
+</html>
